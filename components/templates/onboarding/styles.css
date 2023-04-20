@@ -1,0 +1,15 @@
+.onboarding-template-wrapper{
+    background: #222222;
+    color: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+}
+
+.right-column{
+    background: #FFFFFF;
+    border-top-left-radius: '40px';
+    color: #000000;
+    padding-right: '32px';
+    height: 100vh;
+}
+
