@@ -7,7 +7,15 @@ const meta: Meta<typeof Chip> = {
   component: Chip,
   tags: ['autodocs'],
   argTypes: {
-   
+    // label: {
+    //   defaultValue : 'filled',
+    //   description: 'stuff',
+    // },
+    variant:{
+      description: 'Outlined or Filled',
+      defaultValue: 'filled',
+      withToolbar: true,
+    }
   },
 };
 

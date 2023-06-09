@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@mui/material";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 import { ArgTypes } from "@storybook/blocks";
 
@@ -7,9 +8,9 @@ import { ArgTypes } from "@storybook/blocks";
 import { ThemeProvider } from "@emotion/react";
 import activeTheme from "../../../themes/activeTheme";
 
-const meta: Meta<typeof Button> = {
-  title: "Inputs/Button",
-  component: Button,
+const meta: Meta<typeof ButtonGroup> = {
+  title: "Inputs/Button Group",
+  component: ButtonGroup,
   tags: ["autodocs"],
   argTypes: {
     variant: {
@@ -29,25 +30,10 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonGroup>;
 
-export const Contained: Story = {
+export const Basic: Story = {
   args: {
-    variant: "contained",
-    children: "Contained",
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "outlined",
-    children: "Outlined",
-  },
-};
-
-export const Text: Story = {
-  args: {
-    variant: "text",
-    children: "Text",
+    children: <Button>Button</Button>,
   },
 };

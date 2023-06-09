@@ -9,6 +9,12 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {
+    defaultChecked: {
+      description: 'Default checked state'
+    },
+    disabled: {
+      description: 'Is the checkbox enabled?'
+    }
   },
   decorators: [
     (Story) => (
@@ -22,7 +28,29 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
-export const Primary: Story = {
+export const Checked: Story = {
   args: {
+    defaultChecked: true,
+    disabled: false
+
+  },
+};
+
+export const Unchecked: Story = {
+  args: {
+    defaultChecked: false,
+  },
+};
+
+export const UncheckedDisabled: Story = {
+  args: {
+   disabled: true
+  },
+};
+
+export const CheckedDisabled: Story = {
+  args: {
+    defaultChecked: true,
+    disabled: true
   },
 };

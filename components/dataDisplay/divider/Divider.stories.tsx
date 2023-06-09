@@ -9,6 +9,13 @@ const meta: Meta<typeof Divider> = {
   component: Divider,
   tags: ['autodocs'],
   argTypes: {
+    children: {
+      description: 'Optional Text',
+      defaultValue: 'none',
+      control: {
+        type: 'text'
+      }
+    }
   },
   decorators: [
     (Story) => (

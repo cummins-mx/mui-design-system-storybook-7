@@ -7,8 +7,12 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   tags: ['autodocs'],
   argTypes: {
-   
+    children: {
+      description: 'Letter or Icon',
+      defaultValue: 'None',
+    }
   },
+  
 };
 
 export default meta;

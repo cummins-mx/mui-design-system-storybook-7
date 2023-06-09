@@ -5,7 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import activeTheme from '../../../themes/activeTheme';
 
 const meta: Meta<typeof TextField> = {
-  title: 'Inputs/TextField',
+  title: 'Inputs/Text Field',
   component: TextField,
   tags: ['autodocs'],
   argTypes: {

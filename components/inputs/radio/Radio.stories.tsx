@@ -9,6 +9,10 @@ const meta: Meta<typeof Radio> = {
   component: Radio,
   tags: ['autodocs'],
   argTypes: {
+    defaultChecked: {
+      description: 'stuff',
+      defaultValue: true
+    }
   },
   decorators: [
     (Story) => (
@@ -24,6 +28,6 @@ type Story = StoryObj<typeof Radio>;
 
 export const Primary: Story = {
   args: {
-    
+    defaultChecked: false
   },
 };
