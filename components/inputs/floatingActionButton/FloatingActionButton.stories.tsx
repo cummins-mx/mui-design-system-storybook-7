@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ArgTypes } from "@storybook/blocks";
 
 import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -14,13 +13,15 @@ const meta: Meta<typeof Fab> = {
   tags: ["autodocs"],
   argTypes: {
     size: {
-      description: "small | medium | large",
-    },
-    variant: {
-      description: "The variant to use.",
+      table: {
+        disable: true,
+      },
     },
     color: {
-      description: "The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.",
+      description: "The color of the component.",
+      table: {
+        disable: true,
+      },
     },
   },
   decorators: [
@@ -38,23 +39,11 @@ type Story = StoryObj<typeof Fab>;
 export const Basic: Story = {
   args: {
     color: "primary",
+    size: "large",
   },
   render: (args) => (
     <Fab {...args}>
       <AddIcon />
-    </Fab>
-  ),
-};
-
-export const Extended: Story = {
-  args: {
-    color: "primary",
-    variant: "extended",
-  },
-  render: (args) => (
-    <Fab {...args}>
-      <AddIcon />
-      Add new
     </Fab>
   ),
 };

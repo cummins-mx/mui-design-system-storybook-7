@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@mui/material";
-
-import { ArgTypes } from "@storybook/blocks";
+import { Button, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import LoadingButton from "@mui/lab/LoadingButton";
+import SaveIcon from "@mui/icons-material/Save";
 
 //theming
 import { ThemeProvider } from "@emotion/react";
@@ -13,10 +14,22 @@ const meta: Meta<typeof Button> = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      description: "contained | outlined | text",
+      name: "Variant",
+      description: "The Button comes with three variants:",
+      table: {
+        type: { summary: "contained | outlined | text" },
+        defaultValue: { summary: "contained" },
+      },
+      control: "select",
+      options: ["contained", "outlined", "text"],
     },
-    children: {
-      description: "The content to render within the button",
+    fullWidth: {
+      name: "Full Width",
+      description: "If true, the button will take up the full width of its container.",
+      table: {
+        type: { summary: "true | false" },
+        defaultValue: { summary: "true" },
+      },
     },
   },
   decorators: [
@@ -31,23 +44,33 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Contained: Story = {
+export const FullWidth: Story = {
   args: {
     variant: "contained",
-    children: "Contained",
+    fullWidth: true,
   },
+  render: (args) => <Button {...args}>Submit</Button>,
 };
 
-export const Secondary: Story = {
+export const Loading: Story = {
   args: {
-    variant: "outlined",
-    children: "Outlined",
+    variant: "contained",
+    fullWidth: true,
   },
+  render: (args) => (
+    <LoadingButton {...args} loading loadingPosition="start" startIcon={<SaveIcon />}>
+      Loading
+    </LoadingButton>
+  ),
 };
 
-export const Text: Story = {
+export const Icon: Story = {
   args: {
-    variant: "text",
-    children: "Text",
+    color: "primary",
   },
+  render: (args) => (
+    <IconButton {...args}>
+      <DeleteIcon />
+    </IconButton>
+  ),
 };
